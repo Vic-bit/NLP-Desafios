@@ -1,4 +1,4 @@
-# NPL-Desafíos
+# NLP-Desafíos
 
 En este repositorio se encuentran los desafíos de la cátedra Procesamiento del Lenguaje Natural de la carrera de Especialización en Inteligencia Artificial de la Universidad de Buenos Aires.
 
