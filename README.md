@@ -1,37 +1,30 @@
 # NLP-Desafíos
 
-En este repositorio se encuentran los desafíos de la cátedra Procesamiento del Lenguaje Natural de la carrera de Especialización en Inteligencia Artificial de la Universidad de Buenos Aires.
+En este repositorio se encuentran los desafíos de la cátedra Procesamiento Natural del Lenguaje  de la Carrera Especialización en Inteligencia Artificial de la Universidad de Buenos Aires.
 
 ## Desafío 1
 
-**1**. Vectorizar documentos. Tomar 5 documentos al azar y medir similaridad con el resto de los documentos. Estudiar los 5 documentos más similares de cada uno analizar si tiene sentido la similaridad según el contenido del texto y la etiqueta de clasificación.
+**1**. Se tomaron 5 documentos al azar y se medió la similaridad con el resto. Luego se estudió los 5 documentos más similares a cada uno de ellos según el contenido del texto y la etiqueta de clasificación. En la figura se observa que todos los documentos con mayor similaridad tienen la misma etiqueta de clasificación.
 
 ![image](https://github.com/user-attachments/assets/83d854b5-99ec-4fc4-8bac-75cf4cd934ea)
 
-**2**. Entrenar modelos de clasificación Naïve Bayes para maximizar el desempeño de clasificación(f1-score macro) en el conjunto de datos de test. Considerar cambiar parámetros de instanciación del vectorizador y los modelos y probar modelos de Naïve Bayes Multinomial y ComplementNB.
+**2**. Se entrenaron modelos de clasificación Naïve Bayes para maximizar el desempeño de clasificación(f1-score macro) en el conjunto de datos de test. Se probaron diferentes parámetros de instanciación del vectorizador y de los modelos. Se usaron modelos de Naïve Bayes Multinomial y ComplementNB.
 
 <img width="598" alt="image" src="https://github.com/user-attachments/assets/92cb8c77-4e00-410b-89c7-1705c1ace41c">
 
+
 ![image](https://github.com/user-attachments/assets/9f9feb8e-c3bc-4482-81ca-7ceaffd55d30)
 
-**3**. Transponer la matriz documento-término. De esa manera se obtiene una matriz término-documento que puede ser interpretada como una colección de vectorización de palabras. Estudiar ahora similaridad entre palabras tomando 5 palabras y estudiando sus 5 más similares.
+**3**. Se realizó la transpuesta de la matriz documento-término para obtener la matriz término-documento que puede ser interpretada como una colección de vectorización de palabras. Luego se estudió la similaridad entre palabras tomando 5 palabras y estudiando sus 5 más similares como se observa en la siguiente imagen:
 
 <img width="284" alt="image" src="https://github.com/user-attachments/assets/e564e66f-f364-4d82-b507-beb794a2d0cc">
 
 
 ## Desafío 2
 
-Crear sus propios vectores con Gensim basado en lo visto en clase con otro dataset.
+Se crearon vectores propios con Gensim basado en un dataset propio formado con los dos primeros álbumes de Linkin Park (Hybrid Theory y Meteora).
 
-Probar términos de interés y explicar similitudes en el espacio de embeddings.
-
-Intentar plantear y probar tests de analogías. Graficar los embeddings resultantes.
-
-Sacar conclusiones.
-
-Se usa como corpus las letras de algunas canciones del primer y segundo álbum de Linkin Park (Hybrid Theory y Meteora). Este corpus ser realizó a mano.
-
-Se buscaron las 10 palabras que más se relacionaban con "crawling" seindo estas:
+Se probaron términos de interés como por ejemplo, "crawling" y se observaron las 10 palabras que más se relacionaban, según el espacio de embeddings, siendo estas:
 
 <img width="271" alt="image" src="https://github.com/user-attachments/assets/6a60a3eb-0e53-4719-9231-6f7df2184c50">
 
@@ -42,10 +35,13 @@ También se pueden visualizar en 3d.
 <img width="866" alt="image" src="https://github.com/user-attachments/assets/6b3f603f-5b61-42e3-bcb9-b1fd2d92191c">
 
 
+También se pleantearon tests de analogías como el siguiente con los nombres y apellidos de los vocalistas de la banda:
+
+
 
 ## Desafío 3
 
-Se dividió el desafío en 2 partes, una usando un modelo de lenguaje con tokenización por palabras y otra por caracteres.
+Se dividió el desafío en 2 partes, una usando un modelo de lenguaje con tokenización por palabras y otra con tokenización por caracteres.
 
 ### Modelo de lenguaje con tokenización por palabras
 
@@ -55,26 +51,38 @@ Se dividió el desafío en 2 partes, una usando un modelo de lenguaje con tokeni
 - Proponer arquitecturas de redes neuronales basadas en unidades recurrentes para implementar un modelo de lenguaje.
 - Con el o los modelos que consideren adecuados, generar nuevas secuencias a partir de secuencias de contexto con las estrategias de greedy search y beam search determístico y estocástico. En este último caso observar el efecto de la temperatura en la generación de secuencias.
 
+
+
 - #### Sugerencias
 - Durante el entrenamiento, guiarse por el descenso de la perplejidad en los datos de validación para finalizar el entrenamiento. Para ello se provee un callback.
 - Explorar utilizar SimpleRNN (celda de Elman), LSTM y GRU.
 - rmsprop es el optimizador recomendado para la buena convergencia. No obstante se pueden explorar otros.
 
-Se usó como dataset la letra de todas las canciones de Linkin Park.
+Se usó como dataset uno propio formado por las letras de todas las canciones de Linkin Park. Se lo preprocesó dividiendo el corpus en documentos, siendo estos cada uno de los versos.
 
-Se entrenaron varios modelos dando el mejor de estos usando capas GRU Bidirecionales, donde se obtuvo el menor valor de perplejidad y loss:
+
+Se exploraron diferentes modelos como SimpleRNN, LSTM, GRU, SimpleRNN Bidireccional, LSTM Bidireccional y GRU Bidireccional, donde el último de estos fue el que obtuvo mejores resultados con el menor valor de perplejidad y loss:
 <img width="563" alt="image" src="https://github.com/user-attachments/assets/f2ff3f8c-47f5-4283-b7c7-bf5d737d4ca4">
 
 Se probó generar una secuencia, la letra de una canción 'I wanna run away and open up my' y completó correctamente con la palabra 'mind'.
 
-También se usó Beamsearch y muestreo aleatorio, para la misma secuencia a compeltar pero esta vez con un término menos, 'I wanna run away and open up', dieron los siguente 5 resultados:
+También se usó Beamsearch y muestreo aleatorio, para la misma secuencia a completar pero esta vez con un término menos, 'I wanna run away and open up', dieron los siguente 5 resultados:
 <img width="316" alt="image" src="https://github.com/user-attachments/assets/e35520d8-7f17-4d3e-82d8-5e34a899f434">
 
 ### Modelo de lenguaje con tokenización por caracteres
 
-Utilizaremos como dataset una historia de Magic The Gathering, llamada Family Values.
+Se utilizó como dataset una historia de Magic The Gathering, llamada Family Values.
+
+Se exploraron diferentes modelos como SimpleRNN, LSTM, GRU, donde el último de estos fue el que obtuvo mejores resultados con el menor valor de perplejidad y loss:
 <img width="533" alt="image" src="https://github.com/user-attachments/assets/05e8b635-7c57-45b0-b21c-b7142d9d8bba">
 
+Utilizando como input en la generación de secuencias el siguiente extracto del corpus: 
+
+'Teysa Karlov had spent another full day '
+
+Se obervá que respondió con algo coherente, sienda la respuesta:
+
+![Alt text](image-2.png)
 
 ## Desafío 4
 El objecto es utilizar datos disponibles del challenge ConvAI2 (Conversational Intelligence Challenge 2) de conversaciones en inglés. Se construirá un BOT para responder a preguntas del usuario (QA)
