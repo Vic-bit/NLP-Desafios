@@ -29,6 +29,7 @@ Se probaron términos de interés, como por ejemplo "crawling" de la canción Cr
 <img width="271" alt="image" src="https://github.com/user-attachments/assets/6a60a3eb-0e53-4719-9231-6f7df2184c50">
 
 Se visualiza la agrupación de los vectores donde en este caso se ven los términos que forman parte del estribillo de la canción In the End.
+
 <img width="937" alt="image" src="https://github.com/user-attachments/assets/dc57a075-380d-4554-9d17-71c20b248cd9">
 
 También se pueden visualizar en 3d.
@@ -55,6 +56,7 @@ Se exploraron diferentes modelos como SimpleRNN, LSTM, GRU, SimpleRNN Bidireccio
 Se probó generar una secuencia, la letra de una canción 'I wanna run away and open up my' y completó correctamente con la palabra 'mind':
 
 <img width="361" alt="image" src="https://github.com/user-attachments/assets/8c6e5fcf-4603-4f39-ad90-1c406fcc33de">
+
 
 <img width="291" alt="image" src="https://github.com/user-attachments/assets/e5b1e964-e13f-4d11-87b2-d0c6ae12b560">
 
@@ -97,14 +99,19 @@ Las inferencias obtenidas con el modelo entrenado fueron las siguientes:
 
 <img width="310" alt="image" src="https://github.com/user-attachments/assets/7f113dff-e49b-43b8-98fc-60beb1538a79">
 
+
 <img width="289" alt="image" src="https://github.com/user-attachments/assets/b2ee9935-8d9b-4943-ba62-747f9a5207b7">
+
 
 <img width="269" alt="image" src="https://github.com/user-attachments/assets/826bb428-88a4-4b1f-ab5f-965fcf449065">
 
+
 <img width="261" alt="image" src="https://github.com/user-attachments/assets/ae3fb8b4-143a-448b-a5e0-bbc57500f9e3">
+
 
 <img width="241" alt="image" src="https://github.com/user-attachments/assets/d8859e61-cb06-44ab-80a0-30846b182bbf">
 
+Se observa que algunas de las inferencias, responden algo coherente. En la primera que se le saluda con "hello", respondiendo con "hello how are you", lo mismo sucede en la segunda que se le pregunta "Hi" y responde con "hello how are you". En el tercer caso se le da como entrada "Tell me about you", respondiendo "i am a girl". En el cuarto caso se le escribe "Be happy" y contesta con "i love to read". Por lo tanto se observa que funciona de manera adecuada, pero tiene el problema de que muchas veces contesta con lo mismo sin importar cual sea la pregunta, como en el caso de preguntas que del tipo "Are you...", donde responde "i am a girl", como se ve en el caso 5.
 
 ## Desafío 5
 
