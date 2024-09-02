@@ -122,8 +122,6 @@ Para ello se va a hacer uso de un dataset que son críticas de Google Apps, dond
 
 Se tiene un score que va desde 1 a 5, es decir 5 posibles calificaciones. 
 
-Como tenemos un dataset desbalanceado la métrica de performance va a ser el f1-score macro.
-
 En inferencia medimos el resultado de esta manera.
 
 Se van a comparar 3 modelos cambiando parte de la arquitectura y de los datos para obervar como varían los resultado.
@@ -138,41 +136,59 @@ Se van a condensar los resultados de 1 y 2 en 0, y de 4 y 5 en 2, dejando el sco
 
 Al entrenar por 10 épocas se obtienen las siguentes cursvas de train y val:
 
-
+<img width="558" alt="image" src="https://github.com/user-attachments/assets/7a6fbed5-9493-45e0-9e66-36184a05792a">
 
 La matriz de confusión obtenida fue:
 
+<img width="501" alt="image" src="https://github.com/user-attachments/assets/9de774b6-f44f-499c-a0be-a9cc5e83197a">
 
-Se ensaya el modelo para los 3 posibles casos dando los siguientes resultados:
+Se ensaya el modelo con 3 diferentes textos, dando los siguientes resultados:
 
-- Negativo
+- text = "I love this app!"
+  
+<img width="179" alt="image" src="https://github.com/user-attachments/assets/1a80a130-f795-454e-ae6c-f9cf5dc1aa5d">
 
-- Neutro
+- text = "This app it's okay"
+  
+<img width="179" alt="image" src="https://github.com/user-attachments/assets/0aabc13e-d99f-4c38-941e-f5ea0d423f2a">
 
-- Positivo
+- text = "I hate this app!"
+  
+<img width="176" alt="image" src="https://github.com/user-attachments/assets/1660f905-2330-4f14-88e0-cba5b8b52164">
+
 
 #### Modelo 2: 3 clases, con una capa densa adicional
 
 También se tienen clases en 3 siendo estas:
 
 - negative
+<img width="179" alt="image" src="https://github.com/user-attachments/assets/c0bf08ac-584d-40d3-84ac-e61f5c17b377">
+
 - neutral
 - positive
 
 Al entrenar por 10 épocas se obtienen las siguentes cursvas de train y val:
 
-
+<img width="560" alt="image" src="https://github.com/user-attachments/assets/909986de-335b-4e5f-a77e-6cc2145abb5d">
 
 La matriz de confusión obtenida fue:
 
+<img width="508" alt="image" src="https://github.com/user-attachments/assets/07c88ed8-a57a-47d5-b23c-6b2ee9c0d160">
 
-Se ensaya el modelo para los 3 posibles casos dando los siguientes resultados:
+Se ensaya el modelo con 3 diferentes textos, dando los siguientes resultados:
 
-- Negativo
+- text = "I love this app!"
+  
+<img width="179" alt="image" src="https://github.com/user-attachments/assets/1a80a130-f795-454e-ae6c-f9cf5dc1aa5d">
 
-- Neutro
+- text = "This app it's okay"
+  
+<img width="179" alt="image" src="https://github.com/user-attachments/assets/0aabc13e-d99f-4c38-941e-f5ea0d423f2a">
 
-- Positivo
+- text = "I hate this app!"
+  
+<img width="176" alt="image" src="https://github.com/user-attachments/assets/1660f905-2330-4f14-88e0-cba5b8b52164">
+
 
 #### Modelo 3: 5 clases
 
@@ -186,22 +202,32 @@ No se condensan los valores de score, sino que se representan del 0 al 4, dando 
 
 Al entrenar por 10 épocas se obtienen las siguentes cursvas de train y val:
 
-
+<img width="549" alt="image" src="https://github.com/user-attachments/assets/7df39da4-5913-45c6-a387-f4c0f7db12a2">
 
 La matriz de confusión obtenida fue:
 
+<img width="502" alt="image" src="https://github.com/user-attachments/assets/1bbfe4f8-5a71-4f2d-b9ea-8b67f9e446fd">
 
-Se ensaya el modelo para los 3 posibles casos dando los siguientes resultados:
+Se ensaya el modelo con 3 diferentes textos, dando los siguientes resultados:
 
-- Muy negativo
+- text = "I love this app!"
+  
+<img width="220" alt="image" src="https://github.com/user-attachments/assets/d66f0cbf-326b-4dcc-b144-0c1c43a03ee5">
 
-- Negativo
 
-- Neutro
+- text = "This app it's okay"
+  
+<img width="174" alt="image" src="https://github.com/user-attachments/assets/f2073007-84fe-4efe-bb91-9600fdb2dac9">
 
-- Positivo
 
-- Muy positivo
+- text = "I hate this app!"
+  
+<img width="217" alt="image" src="https://github.com/user-attachments/assets/d041b27c-0c66-44f0-a76e-bc4bc1051a0c">
+
+Se puede apreciar que luego de realizar el feature extractor los modelos puedieron dar resultados satisfactorios en test.
+
+A futuro, si se tuviera más poder de cómputo y se usara fine tuning las métricas aumentarían cosiderablemente. 
+
 
 
 
