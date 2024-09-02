@@ -120,9 +120,7 @@ Este último desafío consiste en hacer análisis de sentimiento mediante BERT.
 
 Para ello se va a hacer uso de un dataset que son críticas de Google Apps, donde una de sus columnas son los comentarios de los usuarios.
 
-Se tiene un score que va desde 1 a 5, es decir 5 posibles calificaciones. 
-
-En inferencia medimos el resultado de esta manera.
+Se tiene un score que va desde 1 a 5, es decir 5 posibles calificaciones.
 
 Se van a comparar 3 modelos cambiando parte de la arquitectura y de los datos para obervar como varían los resultado.
 
