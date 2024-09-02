@@ -113,7 +113,96 @@ Las inferencias obtenidas con el modelo entrenado fueron las siguientes:
 
 Se observa que algunas de las inferencias, responden algo coherente. En la primera que se le saluda con "hello", respondiendo con "hello how are you", lo mismo sucede en la segunda que se le pregunta "Hi" y responde con "hello how are you". En el tercer caso se le da como entrada "Tell me about you", respondiendo "i am a girl". En el cuarto caso se le escribe "Be happy" y contesta con "i love to read". Por lo tanto se observa que funciona de manera adecuada, pero tiene el problema de que muchas veces contesta con lo mismo sin importar cual sea la pregunta, como en el caso de preguntas que del tipo "Are you...", donde responde "i am a girl", como se ve en el caso 5.
 
+
 ## Desafío 5
+
+Este último desafío consiste en hacer análisis de sentimiento mediante BERT.
+
+Para ello se va a hacer uso de un dataset que son críticas de Google Apps, donde una de sus columnas son los comentarios de los usuarios.
+
+Se tiene un score que va desde 1 a 5, es decir 5 posibles calificaciones. 
+
+Como tenemos un dataset desbalanceado la métrica de performance va a ser el f1-score macro.
+
+En inferencia medimos el resultado de esta manera.
+
+Se van a comparar 3 modelos cambiando parte de la arquitectura y de los datos para obervar como varían los resultado.
+
+#### Modelo 1 (base): 3 clases
+
+Se van a condensar los resultados de 1 y 2 en 0, y de 4 y 5 en 2, dejando el score de 3 como 1. De esta manera se convierte la cantidad de clases en 3 siendo estas:
+
+- negative
+- neutral
+- positive
+
+Al entrenar por 10 épocas se obtienen las siguentes cursvas de train y val:
+
+
+
+La matriz de confusión obtenida fue:
+
+
+Se ensaya el modelo para los 3 posibles casos dando los siguientes resultados:
+
+- Negativo
+
+- Neutro
+
+- Positivo
+
+#### Modelo 2: 3 clases, con una capa densa adicional
+
+También se tienen clases en 3 siendo estas:
+
+- negative
+- neutral
+- positive
+
+Al entrenar por 10 épocas se obtienen las siguentes cursvas de train y val:
+
+
+
+La matriz de confusión obtenida fue:
+
+
+Se ensaya el modelo para los 3 posibles casos dando los siguientes resultados:
+
+- Negativo
+
+- Neutro
+
+- Positivo
+
+#### Modelo 3: 5 clases
+
+No se condensan los valores de score, sino que se representan del 0 al 4, dando un total de 5 clases, siendo estas:
+
+- very negative
+- negative
+- neutral
+- positive
+- very positive
+
+Al entrenar por 10 épocas se obtienen las siguentes cursvas de train y val:
+
+
+
+La matriz de confusión obtenida fue:
+
+
+Se ensaya el modelo para los 3 posibles casos dando los siguientes resultados:
+
+- Muy negativo
+
+- Negativo
+
+- Neutro
+
+- Positivo
+
+- Muy positivo
+
 
 
 
