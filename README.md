@@ -28,6 +28,8 @@ Se probaron términos de interés, como por ejemplo "crawling" de la canción Cr
 
 <img width="271" alt="image" src="https://github.com/user-attachments/assets/6a60a3eb-0e53-4719-9231-6f7df2184c50">
 
+donde se observa que entre ellas se encuentra "skin", lo cual es correcto debido al estribillo de la canción.
+
 Se visualiza la agrupación de los vectores donde en este caso se ven los términos que forman parte del estribillo de la canción In the End.
 
 <img width="937" alt="image" src="https://github.com/user-attachments/assets/dc57a075-380d-4554-9d17-71c20b248cd9">
@@ -53,7 +55,7 @@ Se exploraron diferentes modelos como SimpleRNN, LSTM, GRU, SimpleRNN Bidireccio
 
 <img width="563" alt="image" src="https://github.com/user-attachments/assets/f2ff3f8c-47f5-4283-b7c7-bf5d737d4ca4">
 
-Se probó generar una secuencia, la letra de una canción 'I wanna run away and open up my' y completó correctamente con la palabra 'mind':
+Se probó generar una secuencia, la letra de una canción 'I wanna run away and open up my' y completó correctamente con la palabra 'mind, lo cual es correcto:
 
 <img width="361" alt="image" src="https://github.com/user-attachments/assets/8c6e5fcf-4603-4f39-ad90-1c406fcc33de">
 
@@ -132,7 +134,7 @@ Se van a condensar los resultados de 1 y 2 en 0, y de 4 y 5 en 2, dejando el sco
 - neutral
 - positive
 
-Al entrenar por 15 épocas se obtienen las siguentes cursvas de train y val:
+Al entrenar por 15 épocas se obtienen las siguentes curvas de train y val:
 
 <img width="559" alt="image" src="https://github.com/user-attachments/assets/77eab4d3-d7d0-40cc-9836-bfa80cba0a5e">
 
@@ -163,7 +165,7 @@ También se tienen clases en 3 siendo estas:
 - neutral
 - positive
 
-Al entrenar por 15 épocas se obtienen las siguentes cursvas de train y val:
+Al entrenar por 15 épocas se obtienen las siguentes curvas de train y val:
 
 <img width="554" alt="image" src="https://github.com/user-attachments/assets/ba55263e-4ef1-4cd8-809b-f2562b9ebfe2">
 
@@ -196,7 +198,7 @@ No se condensan los valores de score, sino que se representan del 0 al 4, dando 
 - positive
 - very positive
 
-Al entrenar por 15 épocas se obtienen las siguentes cursvas de train y val:
+Al entrenar por 15 épocas se obtienen las siguentes curvas de train y val:
 
 <img width="551" alt="image" src="https://github.com/user-attachments/assets/167ea51c-dd37-4179-af84-7b8c07849065">
 
